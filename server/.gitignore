@@ -6,4 +6,4 @@
 .env.staging
 .env.*.local
 node_modules/
-config/environment/
+config/environment.js
