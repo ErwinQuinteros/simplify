@@ -54,14 +54,14 @@ function App() {
               </PublicRoute>
             }
           />
-          <Route
+          {/* <Route
             path="/register"
             element={
               <PublicRoute>
                 <RegisterPage />
               </PublicRoute>
             }
-          />
+          /> */}
           <Route
             path="/access-denied"
             element={
