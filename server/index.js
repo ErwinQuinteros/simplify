@@ -8,15 +8,15 @@ const startServer = async () => {
     await connectDatabase();
     
     app.listen(PORT, () => {
-      console.log('\n🚀 ========================================');
-      console.log(`🚀 Server running on port ${PORT}`);
-      console.log(`🚀 Environment: ${NODE_ENV}`);
-      console.log('🚀 ========================================');
-      console.log(`📱 Root:       http://localhost:${PORT}`);
-      console.log(`🏥 Health:     http://localhost:${PORT}/health`);
-      console.log(`🔐 Admin API:  http://localhost:${PORT}/api/admin`);
-      console.log(`🌐 Client API: http://localhost:${PORT}/api/client`);
-      console.log('🚀 ========================================\n');
+      console.log('\n========================================');
+      console.log(`Server running on port ${PORT}`);
+      console.log(`Environment: ${NODE_ENV}`);
+      console.log('========================================');
+      console.log(`Root:       http://localhost:${PORT}`);
+      console.log(`Health:     http://localhost:${PORT}/health`);
+      console.log(`Admin API:  http://localhost:${PORT}/api/admin`);
+      console.log(`Client API: http://localhost:${PORT}/api/client`);
+      console.log('========================================\n');
     });
   } catch (error) {
     console.error('❌ Failed to start server:', error);

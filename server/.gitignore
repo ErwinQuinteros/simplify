@@ -9,3 +9,6 @@
 .env.*.local
 node_modules/
 config/environment.js
+*.log
+dist/
+build/

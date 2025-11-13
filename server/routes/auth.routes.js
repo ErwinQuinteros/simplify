@@ -10,7 +10,12 @@ import {
 } from "../validators/auth.validator.js";
 
 const router = Router();
-
+router.post(
+  '/admin/login',
+  loginValidator,
+  validate,
+  authController.adminLogin
+);
 router.post("/register", registerValidator, validate, authController.register);
 
 router.post("/login", loginValidator, validate, authController.login);

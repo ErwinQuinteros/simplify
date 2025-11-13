@@ -37,7 +37,7 @@ class UserService {
   }
 
   async createUser(userData) {
-    const existingUser = await userRepository.findOne(userData.email);
+    const existingUser = await userRepository.findByEmail(userData.email);
     
     if (existingUser) {
       throw new ApiError(400, 'Email already exists');
