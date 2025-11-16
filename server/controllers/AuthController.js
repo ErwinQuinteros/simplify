@@ -42,29 +42,6 @@ class AuthController {
       "Login successful"
     );
   });
-  adminLogin = asyncHandler(async (req, res) => {
-    const { email, password } = req.body;
-    const ipAddress = req.ip;
-    const userAgent = req.headers["user-agent"];
-
-    const result = await authService.adminLogin(
-      email,
-      password,
-      ipAddress,
-      userAgent
-    );
-
-    this.setRefreshTokenCookie(res, result.refreshToken);
-
-    ApiResponse.success(
-      res,
-      {
-        user: result.user,
-        accessToken: result.accessToken,
-      },
-      "Admin login successful"
-    );
-  });
 
   refreshToken = asyncHandler(async (req, res) => {
     const refreshToken = req.cookies.refreshToken || req.body.refreshToken;

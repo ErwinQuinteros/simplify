@@ -68,39 +68,6 @@ class AuthService {
       refreshToken,
     };
   }
-  async adminLogin(email, password, ipAddress, userAgent) {
-    const user = await userRepository.findByEmail(email);
-    
-    if (!user) {
-      throw new ApiError(401, 'Invalid email or password');
-    }
-    if (user.role !== 'admin') {
-      throw new ApiError(403, 'Access denied. Admin access only.');
-    }
-
-    if (!user.isActive) {
-      throw new ApiError(403, 'Your account has been deactivated');
-    }
-
-    const isPasswordValid = await user.comparePassword(password);
-    
-    if (!isPasswordValid) {
-      throw new ApiError(401, 'Invalid email or password');
-    }
-
-    const accessToken = generateAccessToken(user._id);
-    const refreshToken = generateRefreshToken(user._id);
-
-    await this.saveRefreshToken(user._id, refreshToken, ipAddress, userAgent);
-
-    user.password = undefined;
-
-    return {
-      user,
-      accessToken,
-      refreshToken
-    };
-  }
   async refreshAccessToken(refreshToken) {
     let decoded;
     try {
