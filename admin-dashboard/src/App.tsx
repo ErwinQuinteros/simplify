@@ -6,7 +6,6 @@ import { useAuthStore } from "@/store/authStore";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { PublicRoute } from "@/components/PublicRoute";
 import LoginPage from "@/pages/LoginPage";
-import RegisterPage from "@/pages/RegisterPage";
 import DashboardLayout from "@/layouts/DashboardLayout";
 import DashboardHome from "@/pages/DashboardHome";
 import UsersPage from "@/pages/UsersPage";
@@ -54,14 +53,6 @@ function App() {
               </PublicRoute>
             }
           />
-          {/* <Route
-            path="/register"
-            element={
-              <PublicRoute>
-                <RegisterPage />
-              </PublicRoute>
-            }
-          /> */}
           <Route
             path="/access-denied"
             element={

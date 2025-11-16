@@ -20,6 +20,8 @@
     "paths": {
       "@/*": ["./src/*"]
     }
+    
   },
+  "allowJs": true,
   "include": ["src"]
 }

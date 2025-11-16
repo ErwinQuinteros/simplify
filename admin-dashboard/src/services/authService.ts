@@ -2,12 +2,6 @@ import api from "@/lib/api";
 import { ApiResponse, LoginCredentials, RegisterData, User } from "@/types";
 
 export const authService = {
-  async adminLogin(credentials: LoginCredentials) {
-    const { data } = await api.post<
-      ApiResponse<{ user: User; accessToken: string }>
-    >("/auth/admin/login", credentials);
-    return data.data;
-  },
   async login(credentials: LoginCredentials) {
     const { data } = await api.post<
       ApiResponse<{ user: User; accessToken: string }>

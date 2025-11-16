@@ -11,7 +11,7 @@ export const useAuth = () => {
   const { setUser, logout: logoutStore } = useAuthStore();
 
   const loginMutation = useMutation({
-    mutationFn: (credentials: LoginCredentials) => authService.adminLogin(credentials),
+    mutationFn: (credentials: LoginCredentials) => authService.login(credentials),
     onSuccess: (data) => {
       localStorage.setItem('accessToken', data.accessToken);
       setUser(data.user);
